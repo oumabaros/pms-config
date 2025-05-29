@@ -2,10 +2,10 @@ spring:
   application:
     name: analytics-service
   config:
-    import: "optional:configserver:"
+    import: "optional:configserver:http://config-server:8888"
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://config-server:8888
       request-connect-timeout: 5000
       request-read-timeout: 5000
       fail-fast: true
@@ -18,7 +18,7 @@ spring:
     consumer:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
-    bootstrap-servers: http://localhost:9092
+    bootstrap-servers: http://kafka:9092
 management:
   endpoints:
     web:
