@@ -1,0 +1,30 @@
+billing:
+  service:
+    address: billing-service
+    grpc:
+      port: 9001
+server:
+  port: 4000
+logging:
+  level:
+    root: info
+spring:
+  application:
+    name: patient-service
+  datasource:
+    password: password
+    url: jdbc:postgresql://patient-service-db:5432/db
+    username: admin_user
+  jpa:
+    hibernate:
+      ddl:
+        auto: update
+  kafka:
+    bootstrap:
+      servers: kafka:9092,kafka:9094
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+  sql:
+    init:
+      mode: always
