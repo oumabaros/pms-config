@@ -1,4 +1,8 @@
-
+spring:
+  application:
+    name: billing-service
+  profiles:
+    active: development
 server:
   port: 4001
 grpc:
