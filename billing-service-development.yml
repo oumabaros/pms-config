@@ -1,8 +1,8 @@
-spring:
-  application:
-    name: billing-service
-  profiles:
-    active: development
-  config:
-    import: "optional:configserver:"
-  
+
+server:
+  port: 4001
+grpc:
+  server:
+    port: 9001
+billing:
+  greeting: Hey billing
