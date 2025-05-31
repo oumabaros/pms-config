@@ -15,6 +15,11 @@ spring:
         username: user
         password: password
         label: master
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
 server:
   port: 4001
 grpc:
