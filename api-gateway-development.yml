@@ -1,6 +1,7 @@
+---
 spring:
- config:
-   import: "optional:configserver:"
+  config:
+    import: "optional:configserver:"
   cloud:
     config:
       uri: http://config-service:8888
@@ -23,7 +24,6 @@ spring:
             - Path=/auth/**
           filters:
             - StripPrefix=1
-
         - id: patient-service-route
           uri: http://patient-service:4000
           predicates:
@@ -31,14 +31,12 @@ spring:
           filters:
             - StripPrefix=1
             - JwtValidation
-
         - id: api-docs-patient-route
           uri: http://patient-service:4000
           predicates:
             - Path=/api-docs/patients
           filters:
             - RewritePath=/api-docs/patients,/v3/api-docs
-
         - id: api-docs-auth-route
           uri: http://auth-service:4005
           predicates:
