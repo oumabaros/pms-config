@@ -7,8 +7,7 @@ spring:
     username: admin_user
   jpa:
     hibernate:
-      ddl:
-        auto: update
+      ddl-auto: update
   sql:
     init:
       mode: always
